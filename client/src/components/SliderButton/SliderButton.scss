@@ -1,0 +1,20 @@
+@import '../../scss/variables.scss';
+
+.slider-button {
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  background-color: $gray-3;
+  transition: ease 0.25s;
+
+  svg path {
+    fill: $green;
+  }
+  &:hover {
+    background-color: $green;
+
+    svg path {
+      fill: #fff;
+    }
+  }
+}

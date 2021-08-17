@@ -1,0 +1,74 @@
+.services {
+  position: relative;
+  background-color: $gray-3;
+  background-image: url('../../assets/img/services-bg.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+
+  &::after {
+    position: absolute;
+    content: 'УСЛУГИ';
+    font-family: $acrom-b;
+    font-size: 326px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    top: 0;
+    right: -25%;
+    z-index: 0;
+  }
+}
+.services__list {
+  margin-top: 65px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 1440px) {
+  .services::after {
+    font-size: 300px;
+    right: -30%;
+  }
+}
+@media (max-width: 1200px) {
+  .services__list {
+    margin-top: 35px;
+  }
+  .services::after {
+    font-size: 280px;
+  }
+}
+@media (max-width: 1024px) {
+  .services::after {
+    font-size: 260px;
+    right: -35%;
+  }
+}
+@media (max-width: 900px) {
+  .services::after {
+    font-size: 240px;
+    right: -40%;
+  }
+}
+@media (max-width: 768px) {
+  .services .title {
+    // margin-bottom: 25px;
+  }
+  .services::after {
+    font-size: 180px;
+    right: -45%;
+  }
+}
+@media (max-width: 600px) {
+  .services::after {
+    font-size: 150px;
+    right: -50%;
+  }
+}
+@media (max-width: 500px) {
+  .services::after {
+    font-size: 100px;
+    right: -50%;
+  }
+}

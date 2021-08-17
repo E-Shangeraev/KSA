@@ -1,0 +1,78 @@
+// ==== Глобальные стили ====
+body {
+  height: 100%;
+  overflow-x: hidden;
+
+  * {
+    font-family: 'Acrom Medium', sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+    color: #000;
+  }
+}
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+#root {
+  height: 100%;
+}
+#portal {
+  position: relative;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+header {
+  position: relative;
+  z-index: 1;
+}
+section,
+footer {
+  position: relative;
+}
+header,
+footer {
+  flex: 0 0 auto;
+}
+footer {
+  margin-top: auto;
+}
+main {
+  flex: 1 0 auto;
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+p,
+figure {
+  margin: 0;
+}
+fieldset {
+  border: none;
+}
+
+// ==== Общие классы ====
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}

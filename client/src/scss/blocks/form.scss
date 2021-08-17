@@ -1,0 +1,134 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  input,
+  textarea {
+    color: #000;
+    outline: none;
+  }
+  input::placeholder {
+    color: #ccc !important;
+  }
+  label,
+  textarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 45px;
+    font-size: 16px;
+    line-height: 160%;
+    border: 1px solid $gray-2;
+    border-radius: 30px;
+
+    &.valid {
+      border-color: #0f0;
+    }
+  }
+  span {
+    color: #000;
+    flex-shrink: 0;
+    margin-right: 15px;
+  }
+  input:not([type='checkbox']) {
+    width: 100%;
+    text-align: end;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    outline: none;
+  }
+  textarea {
+    border-radius: 25px;
+    resize: none;
+  }
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+.form__agreement {
+  display: flex;
+
+  input {
+    margin-top: 4px;
+  }
+  label {
+    display: block;
+    width: 70%;
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding: 0;
+    border: none;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .form {
+    label,
+    input,
+    textarea {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .form {
+    label,
+    input,
+    textarea {
+      font-size: 14px;
+    }
+    label,
+    textarea {
+      padding: 15px 45px;
+    }
+    [type='checkbox'] + label {
+      padding: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  [type='checkbox'] + label {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .form {
+    label,
+    textarea {
+      padding: 10px 25px;
+    }
+    label,
+    input,
+    button,
+    textarea {
+      font-size: 12px;
+    }
+    [type='checkbox'] + label {
+      padding: 0;
+
+      * {
+        font-size: 12px;
+      }
+    }
+  }
+  .form__agreement label {
+    width: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .form {
+    label,
+    textarea {
+      padding: 10px 15px;
+    }
+  }
+  .form__agreement label {
+    width: 100%;
+  }
+}

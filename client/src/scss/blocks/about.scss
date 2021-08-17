@@ -1,0 +1,72 @@
+@import '../variables.scss';
+
+.about {
+  position: relative;
+  background-image: url('../../assets/img/about-bg.png');
+  background-repeat: no-repeat;
+  background-position: 0% 70%;
+  background-size: 100%;
+
+  &::after {
+    position: absolute;
+    content: 'О НАС';
+    font-family: $acrom-b;
+    font-size: 326px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    color: $gray-3;
+    top: 0;
+    right: -5%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .about::after {
+    font-size: 300px;
+    right: -20%;
+  }
+}
+@media (max-width: 1200px) {
+  .about::after {
+    font-size: 280px;
+  }
+}
+@media (max-width: 1024px) {
+  .about::after {
+    font-size: 260px;
+    right: -25%;
+  }
+}
+@media (max-width: 900px) {
+  .about::after {
+    font-size: 240px;
+    right: -30%;
+  }
+}
+@media (max-width: 768px) {
+  .about::after {
+    font-size: 180px;
+    top: 2%;
+    right: -25%;
+  }
+}
+@media (max-width: 600px) {
+  .about::after {
+    font-size: 150px;
+    right: -25%;
+  }
+}
+@media (max-width: 500px) {
+  .about::after {
+    top: 0;
+    right: -30%;
+  }
+}
+@media (max-width: 320px) {
+  .about::after {
+    font-size: 100px;
+    right: -30%;
+  }
+}

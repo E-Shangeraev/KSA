@@ -1,0 +1,130 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: $header-height;
+  padding: 0 14%;
+  z-index: 9999;
+
+  & > div:first-of-type {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(60% + 14%);
+  }
+  & > div:last-of-type {
+    display: flex;
+    width: 40%;
+  }
+  .button {
+    margin-left: 5%;
+  }
+}
+.header__logo {
+  margin-right: 5%;
+}
+.header__nav {
+  flex-grow: 1;
+  max-width: 350px;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    position: relative;
+    font-size: 16px;
+    line-height: 150%;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      width: 6.8em;
+      height: 6.8em;
+      opacity: 0.5;
+      transform: translate(-50%, -50%) scale(0);
+      border-radius: 50%;
+      background: radial-gradient($green 1%, transparent 50%) no-repeat;
+      z-index: -1;
+      transition: ease 0.35s;
+    }
+  }
+  li:not(:last-of-type) {
+    margin-right: 10%;
+  }
+  li:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 0 10%;
+  }
+}
+@media (max-width: 1024px) {
+  .header__nav {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 0 5%;
+    height: 100px;
+
+    .button {
+      padding: 0;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 0;
+      background-image: url('../../assets/img/phone-icon.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
+      background-color: $green;
+    }
+    .button:hover,
+    .button:focus,
+    .button:active {
+      opacity: 1.2;
+      background-color: $green;
+      border-color: $green;
+    }
+  }
+  .header__logo {
+    width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    position: relative;
+    z-index: 0;
+    height: 70px;
+    background-color: $gray-3;
+
+    .button {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .header {
+    button {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

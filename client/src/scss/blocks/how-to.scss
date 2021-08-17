@@ -1,0 +1,87 @@
+.how-to {
+  padding: 4.4% 7.3%;
+  background-color: #fff;
+}
+.how-to__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  // align-items: center;
+
+  .subtitle {
+    // margin: 0;
+  }
+  .button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.how-to__steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 100%;
+
+  li:not(:last-of-type) {
+    margin-right: 3%;
+  }
+  li {
+    width: 30%;
+  }
+  li img {
+    height: 68px;
+    margin-bottom: 20px;
+  }
+  li p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .how-to__steps li p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+  .how-to__container {
+    align-items: center;
+
+    .subtitle {
+      margin: 0;
+    }
+    .button {
+      position: relative;
+      margin-top: 50px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .how-to__steps {
+    flex-direction: column;
+
+    li {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-right: 0 !important;
+    }
+    li:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+    li img {
+      margin-bottom: 0;
+      margin-right: 15px;
+      width: 70px;
+      height: auto;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .how-to__steps {
+    li img {
+      width: 50px;
+    }
+  }
+}

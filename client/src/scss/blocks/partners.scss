@@ -1,0 +1,104 @@
+.partners {
+  position: relative;
+  background-image: url('../../assets/img/partners-bg.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+
+  &::after {
+    position: absolute;
+    content: 'ПАРТНЕРЫ';
+    font-family: $acrom-b;
+    font-size: 326px;
+    line-height: 120%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $gray-3;
+    top: 0;
+    right: -50%;
+  }
+}
+.partners__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
+  grid-gap: 30px;
+  width: 100%;
+  margin-top: 65px;
+
+  li {
+    transition: ease 0.35s;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      padding: 15% 9%;
+      height: 100%;
+      background-color: $gray-3;
+    }
+    img {
+      align-self: start;
+      margin-bottom: 45px;
+    }
+    p {
+      margin-top: auto;
+      font-size: 16px;
+      line-height: 160%;
+    }
+    &:hover {
+      transform: translateY(-3%);
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .partners::after {
+    font-size: 300px;
+    right: -30%;
+  }
+}
+@media (max-width: 1200px) {
+  .partners__list {
+    margin-top: 35px;
+  }
+  .partners::after {
+    font-size: 280px;
+  }
+}
+@media (max-width: 1024px) {
+  .partners__list li p {
+    font-size: 14px;
+  }
+  .partners::after {
+    font-size: 260px;
+    right: -35%;
+  }
+}
+@media (max-width: 900px) {
+  .partners::after {
+    font-size: 240px;
+    right: -40%;
+  }
+}
+@media (max-width: 768px) {
+  .partners::after {
+    font-size: 180px;
+    right: -75%;
+  }
+}
+@media (max-width: 600px) {
+  .partners__list li {
+    a {
+      padding: 25px;
+    }
+    img {
+      margin-bottom: 25px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .partners::after {
+    font-size: 100px;
+    right: -50%;
+  }
+}

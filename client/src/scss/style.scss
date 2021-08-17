@@ -1,0 +1,21 @@
+@import './fonts.scss';
+@import './variables.scss';
+@import './globals.scss';
+
+// ==== Библиотеки ====
+@import '~normalize-css/normalize.css';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+// ==== Стили блоков ====
+@import './blocks/wrapper.scss';
+@import './blocks/header.scss';
+@import './blocks/promo.scss';
+@import './blocks/about.scss';
+@import './blocks/services.scss';
+@import './blocks/how-to.scss';
+@import './blocks/partners.scss';
+@import './blocks/news.scss';
+@import './blocks/form.scss';
+@import './blocks/error.scss';
+@import './blocks/footer.scss';

@@ -1,0 +1,147 @@
+@import '../../scss/variables.scss';
+
+.about-slider {
+  position: relative;
+  margin-top: 65px;
+  height: max-content;
+}
+.about-slider__bottom {
+  position: relative;
+  display: flex;
+  margin-bottom: 100px;
+  margin-top: -100px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  z-index: 2;
+}
+.second {
+  position: relative;
+  padding: 4.5%;
+  width: 70%;
+  top: 0;
+  left: 100px;
+  background-color: #fff;
+}
+.second__slide {
+  font-size: 18px;
+  line-height: 160%;
+
+  b {
+    color: $green;
+  }
+}
+.about-slider__buttons {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+
+  .slider-button--prev {
+    margin-right: 15px;
+  }
+}
+.about-slider__switchers {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  li:last-of-type {
+    pointer-events: none;
+    width: 100px;
+  }
+  button {
+    font-size: 28px;
+    line-height: 260%;
+    white-space: nowrap;
+    transition: ease 0.25s;
+  }
+  button.active {
+    color: $green;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 1200px) {
+  .about-slider {
+    margin-top: 35px;
+  }
+  .second__slide {
+    font-size: 16px;
+  }
+  .about-slider__switchers button {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .second {
+    left: 60px;
+  }
+  .second__slide {
+    font-size: 14px;
+  }
+  .about-slider__switchers button {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .about-slider__bottom {
+    margin-bottom: 60px;
+  }
+  .second {
+    left: 0;
+  }
+  .about-slider__bottom {
+    margin-top: -50px;
+  }
+  .about-slider__switchers button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .about-slider__switchers {
+    align-items: flex-start;
+    flex-direction: column;
+
+    button {
+      line-height: 150%;
+      text-align: left;
+      white-space: normal;
+    }
+    li:not(:last-of-type) {
+      margin-bottom: 1.5em;
+    }
+  }
+  .about-slider .first {
+    .slick-slide {
+      img {
+        object-fit: cover;
+        height: 100% !important;
+        height: 30vh !important;
+      }
+    }
+  }
+  .about-slider__bottom {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    .second {
+      width: 100%;
+    }
+  }
+  .about-slider__buttons {
+    position: relative;
+    margin: 0;
+  }
+  .second__slide {
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  .about-slider__switchers button {
+    font-size: 14px;
+  }
+}

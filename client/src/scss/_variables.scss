@@ -1,0 +1,16 @@
+// ==== Цвета ====
+$green: #47b199;
+$dark-green: #1f2b29;
+$gray-1: #5e5557;
+$gray-2: #b0abad;
+$gray-3: #f2f5f5;
+
+$header-height: 163px;
+
+@media (max-width: 768px) {
+  $header-height: 100px;
+}
+
+// ==== Шрифты ====
+$acrom: 'Acrom Medium';
+$acrom-b: 'Acrom Bold';

@@ -1,0 +1,150 @@
+@import '../../scss/variables.scss';
+
+.feedback__form {
+  position: relative;
+  padding: 5.8% 5%;
+  background-color: $green;
+
+  .title {
+    margin-bottom: 15px;
+
+    span {
+      color: #fff;
+    }
+    &::before {
+      display: none;
+    }
+  }
+  img {
+    margin-top: -200px;
+    margin-bottom: 15px;
+    animation: image-animation 3s ease-in infinite alternate-reverse both;
+  }
+  label {
+    border-color: #fff;
+  }
+  span {
+    color: #fff;
+  }
+  input {
+    color: #fff !important;
+  }
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $green inset !important;
+    box-shadow: 0 0 0 30px $green inset !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+}
+.feedback__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+@keyframes image-animation {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@media (max-width: 1600px) {
+  .feedback .title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 1440px) {
+  .feedback .title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 1200px) {
+  .feedback img {
+    margin-top: -150px;
+  }
+}
+@media (max-width: 1024px) {
+  .feedback__container {
+    grid-template-columns: auto;
+    grid-template-areas:
+      'title img'
+      'name name'
+      'phone phone'
+      'email email'
+      'button button';
+    grid-column-gap: 0;
+  }
+  .feedback {
+    .title {
+      grid-area: title;
+    }
+    img {
+      margin-top: -100px;
+      transform: scale(1.5);
+      grid-area: img;
+    }
+    .button {
+      grid-area: button;
+    }
+  }
+  label:nth-of-type(1) {
+    grid-area: name;
+  }
+  label:nth-of-type(2) {
+    grid-area: phone;
+  }
+  label:nth-of-type(3) {
+    grid-area: email;
+  }
+}
+@media (max-width: 900px) {
+  .feedback__container {
+    .title {
+      font-size: 26px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .feedback__container {
+    .title {
+      font-size: 24px;
+    }
+  }
+  .feedback img {
+    margin-top: -50px;
+  }
+}
+@media (max-width: 600px) {
+  .feedback__container {
+    .title {
+      font-size: 22px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .feedback img {
+    display: none;
+  }
+  .feedback__container {
+    grid-row-gap: 20px;
+
+    .title {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .feedback__container {
+    .title {
+      font-size: 18px;
+    }
+  }
+}

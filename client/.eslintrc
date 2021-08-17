@@ -1,0 +1,53 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "semi": "off",
+    "no-console": "warn",
+    "no-alert": "warn",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-plusplus": "off",
+    "no-underscore-dangle": [
+      "error",
+      { "allow": ["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] }
+    ],
+    "max-len": ["error", 80],
+    "vars-on-top": "off",
+    "linebreak-style": "off",
+    "prefer-destructuring": "off",
+    "indent": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/resolver": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/prop-types": 0
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ]
+}
