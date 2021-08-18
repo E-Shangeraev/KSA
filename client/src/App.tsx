@@ -163,7 +163,7 @@ function App(): JSX.Element {
             </ul>
           </div>
         </section>
-        <Feedback />
+        <Feedback id="4" />
       </main>
       <footer className="footer">
         <div className="wrapper">
@@ -181,10 +181,7 @@ function App(): JSX.Element {
                     <a href="#3">Партнеры</a>
                   </li>
                   <li>
-                    <a href="#4">Задать вопрос</a>
-                  </li>
-                  <li>
-                    <a href="#5">Оставить заявку</a>
+                    <a href="#4">Оставить заявку</a>
                   </li>
                 </ul>
               </nav>
@@ -195,7 +192,7 @@ function App(): JSX.Element {
               />
             </div>
             <div>
-              <span className="footer__inn">ООО “КСА” ИНН 000000000000</span>
+              <span className="footer__inn">ООО “КСА” ИНН 3455001204</span>
               <span className="footer__address">
                 Офис в г. Москва <br />
                 ул. Пушкина 31а, <br />

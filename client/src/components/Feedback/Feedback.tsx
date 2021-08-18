@@ -14,7 +14,7 @@ const phoneRegExp =
 
 const formId = uuidv4()
 
-const Feedback: FC = () => {
+const Feedback: FC<{ id?: string }> = ({ id }) => {
   const [submited, setSubmited] = useState(false)
 
   const afterSubmit = () => setSubmited(false)
@@ -31,7 +31,7 @@ const Feedback: FC = () => {
   })
 
   return (
-    <section className="feedback">
+    <section className="feedback" id={id}>
       <div className="wrapper">
         <Formik
           initialValues={{
