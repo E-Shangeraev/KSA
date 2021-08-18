@@ -6,7 +6,6 @@ import Feedback from './components/Feedback/Feedback'
 import Modal from './components/Modal/Modal'
 import ModalFeedback from './components/Modal/ModalFeedback'
 import logo from './assets/img/logo.svg'
-import promoIllustration from './assets/img/promo-illustration.png'
 import icon1 from './assets/img/icons/1.svg'
 import icon2 from './assets/img/icons/2.svg'
 import icon3 from './assets/img/icons/3.svg'
@@ -198,8 +197,13 @@ function App(): JSX.Element {
             <div>
               <span className="footer__inn">ООО “КСА” ИНН 000000000000</span>
               <span className="footer__address">
-                Офис в г. Москва ул. Пушкина 31а, оф. 501 тел: +7 (391)
-                000-00-00 пн-пт с 9:00 до 18:00
+                Офис в г. Москва <br />
+                ул. Пушкина 31а, <br />
+                оф. 501,
+                <a href="tel:+7 (904) 645-11-91">
+                  <span>тел: </span>+7 (904) 645-11-91
+                </a>{' '}
+                пн-пт с 9:00 до 18:00
               </span>
               <p className="footer__policy">
                 <span>Все права защищены.</span>
