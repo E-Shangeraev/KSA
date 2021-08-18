@@ -76,11 +76,12 @@ function App(): JSX.Element {
                   </p>
                 </div>
               </div>
-              <img
+              <div className="promo__picture" />
+              {/* <img
                 src={promoIllustration}
                 alt="Бизнесмен с ноутбуком"
-                className="promo__bg"
-              />
+                className="promo__picture"
+              /> */}
             </div>
           </div>
         </section>

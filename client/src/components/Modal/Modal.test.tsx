@@ -5,7 +5,7 @@ import ModalFeedback from './ModalFeedback'
 import Modal from './Modal'
 
 describe('ModalFeedback', () => {
-  let updateProps: (...args: any[]) => void
+  let updateProps: (...args: string[]) => void
 
   beforeEach(() => {
     const { rerender } = render(<ModalFeedback title="Title" />)

@@ -1,4 +1,5 @@
 /// <reference types="react-scripts" />
+
 import Slider, { Settings } from 'react-slick'
 
 declare module 'react-slick' {

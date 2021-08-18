@@ -64,7 +64,7 @@ const ModalFeedback: FC<ModalFeedbackProps> = ({
               //   headers: { 'Content-Type': 'application/json' },
               //   body: JSON.stringify(values),
               // })
-              console.log(values)
+              // console.log(values)
               resetForm()
               setSubmited(true)
             }}

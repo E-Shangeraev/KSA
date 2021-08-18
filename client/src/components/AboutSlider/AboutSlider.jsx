@@ -1,7 +1,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { FC, useRef, useState } from 'react'
-import Slick, { Settings as SlickSettings } from 'react-slick'
+import React, { useRef, useState } from 'react'
+import Slick, { Settings } from 'react-slick'
 import classNames from 'classnames'
 import SliderButton from '../SliderButton/SliderButton'
 import './AboutSlider.scss'
@@ -11,7 +11,7 @@ import image3 from '../../assets/img/Slider/3.jpg'
 import image4 from '../../assets/img/Slider/4.jpg'
 import image5 from '../../assets/img/Slider/5.jpg'
 
-export const switchers: string[] = [
+export const switchers = [
   'Всегда на связи',
   'Бесплатные консультации',
   'Идем навстечу клиентам',
