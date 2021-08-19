@@ -4,6 +4,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
+  .wrapper {
+    padding-top: 15px;
+  }
 }
 .promo__container {
   display: flex;
@@ -94,7 +98,6 @@
 
     .wrapper {
       position: relative;
-      padding-right: 5%;
       width: 100%;
       z-index: 10;
     }

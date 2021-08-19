@@ -6,11 +6,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
-  // align-items: center;
 
   .subtitle {
-    // margin: 0;
+    margin-top: 15px;
+    font-family: $acrom-b;
+    font-size: 30px;
   }
   .button {
     position: absolute;
@@ -42,6 +42,12 @@
 @media (max-width: 1200px) {
   .how-to__steps li p {
     font-size: 14px;
+  }
+}
+@media (max-width: 1024px) {
+  .how-to__container .subtitle {
+    margin-top: 10px;
+    font-size: 26px;
   }
 }
 @media (max-width: 900px) {
@@ -77,11 +83,24 @@
       height: auto;
     }
   }
+  .how-to__container .subtitle {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .how-to__container .subtitle {
+    font-size: 18px;
+  }
 }
 @media (max-width: 500px) {
   .how-to__steps {
     li img {
       width: 50px;
     }
+  }
+}
+@media (max-width: 340px) {
+  .how-to__container .subtitle {
+    font-size: 16px;
   }
 }

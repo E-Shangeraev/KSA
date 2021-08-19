@@ -35,6 +35,9 @@ function App(): JSX.Element {
             </li>
           </ul>
         </nav>
+        <a className="header__phone" href="tel:+7 (904) 645-11-91">
+          +7 (904) 645-11-91
+        </a>
         <Modal btnText="Обратный звонок" btnOutlined>
           <ModalFeedback
             title="КСА на связи"
@@ -106,7 +109,7 @@ function App(): JSX.Element {
             <ServicesList />
             <div className="how-to">
               <div className="how-to__container">
-                <h3 className="subtitle">Как обратиться к нам за помощью?</h3>
+                <h3 className="subtitle">Получить помощь легко</h3>
                 <ul className="how-to__steps">
                   <li>
                     <img src={icon1} alt="Поиск в интернете" />
@@ -136,7 +139,7 @@ function App(): JSX.Element {
           <div className="wrapper">
             <Title aura>
               <span>
-                <b>Наши партнеры,</b>,
+                <b>Наши партнеры,</b>
               </span>
               <span>которые помогают</span>
               <span>нам развиваться</span>
