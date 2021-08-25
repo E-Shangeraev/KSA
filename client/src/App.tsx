@@ -38,7 +38,7 @@ function App(): JSX.Element {
         <a className="header__phone" href="tel:+7 (904) 645-11-91">
           +7 (904) 645-11-91
         </a>
-        <Modal btnText="Обратный звонок" btnOutlined>
+        <Modal btnText="Получить консультацию" btnOutlined>
           <ModalFeedback
             title="КСА на связи"
             text="Оставьте свои контактные данные
@@ -79,11 +79,6 @@ function App(): JSX.Element {
                 </div>
               </div>
               <div className="promo__picture" />
-              {/* <img
-                src={promoIllustration}
-                alt="Бизнесмен с ноутбуком"
-                className="promo__picture"
-              /> */}
             </div>
           </div>
         </section>

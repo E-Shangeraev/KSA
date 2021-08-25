@@ -59,7 +59,7 @@ const Service: FC<ServiceProps> = ({ name, description }) => {
       </button>
       <div className="service__description" ref={serviceRef}>
         <p>{description}</p>
-        <Modal btnText="Обратный звонок">
+        <Modal btnText="Получить консультацию">
           <ModalFeedback
             title="Это модальное окно"
             text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
