@@ -16,6 +16,9 @@
     position: relative;
     white-space: nowrap;
   }
+  small {
+    font-size: 0.5em;
+  }
   span:nth-of-type(2) {
     left: 6%;
   }
@@ -35,6 +38,11 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
+  }
+  &--no-indent {
+    span:nth-of-type(2) {
+      left: 0;
+    }
   }
 }
 

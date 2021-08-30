@@ -13,15 +13,13 @@ const formId = uuidv4()
 interface ModalFeedbackProps {
   title: string
   text?: string
-  areaName?: string
-  areaCode?: string
+  featureName?: string
 }
 
 const ModalFeedback: FC<ModalFeedbackProps> = ({
   title,
   text,
-  areaName,
-  areaCode,
+  featureName,
 }) => {
   const [submited, setSubmited] = useState(false)
 
@@ -54,17 +52,15 @@ const ModalFeedback: FC<ModalFeedbackProps> = ({
               email: '',
               text: '',
               agreement: false,
-              areaName,
-              areaCode,
+              featureName,
             }}
             validateOnBlur
             onSubmit={async (values, { resetForm }) => {
-              // await fetch('/api/mail', {
-              //   method: 'POST',
-              //   headers: { 'Content-Type': 'application/json' },
-              //   body: JSON.stringify(values),
-              // })
-              // console.log(values)
+              await fetch('/api/mail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(values),
+              })
               resetForm()
               setSubmited(true)
             }}

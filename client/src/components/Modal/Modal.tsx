@@ -49,11 +49,15 @@ const Modal: FC<ModalProps> = React.memo(
 
     useEffect(() => {
       if (open) {
-        document.body.style.overflow = 'hidden'
         document.addEventListener('click', handleOutsideClick)
+        document.body.style.paddingRight = `${
+          window.innerWidth - document.body.scrollWidth
+        }px`
+        document.body.style.overflow = 'hidden'
       } else {
-        document.body.style.overflow = ''
         document.removeEventListener('click', handleOutsideClick)
+        document.body.style.overflow = ''
+        document.body.style.paddingRight = ''
       }
     }, [open])
 

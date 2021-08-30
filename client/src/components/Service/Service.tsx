@@ -7,9 +7,10 @@ import './Service.scss'
 interface ServiceProps {
   name: string
   description: string
+  icon: string
 }
 
-const Service: FC<ServiceProps> = ({ name, description }) => {
+const Service: FC<ServiceProps> = ({ name, description, icon }) => {
   const [toggleService, setToggleService] = useState<boolean>(false)
   const serviceRef = useRef<HTMLDivElement>(null)
 
@@ -35,7 +36,10 @@ const Service: FC<ServiceProps> = ({ name, description }) => {
         className="service__name"
         onClick={onToggleService}
         data-testid="button">
-        <span className={classNames({ active: toggleService })}>{name}</span>
+        <div>
+          <img src={icon} alt={name} />
+          <span className={classNames({ active: toggleService })}>{name}</span>
+        </div>
         <div
           className={classNames('service__arrow', {
             'service__arrow--rotated': toggleService,
@@ -61,9 +65,10 @@ const Service: FC<ServiceProps> = ({ name, description }) => {
         <p>{description}</p>
         <Modal btnText="Получить консультацию">
           <ModalFeedback
-            title="Это модальное окно"
-            text="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Sint eius minima consequuntur suscipit quaerat incidunt."
+            title="КСА на связи"
+            text="Оставьте свои контактные данные
+                    и мы обязательно свяжемся с вами"
+            featureName={name}
           />
         </Modal>
       </div>

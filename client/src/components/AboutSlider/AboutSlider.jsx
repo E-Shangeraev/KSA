@@ -1,7 +1,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useState } from 'react'
-import Slick, { Settings } from 'react-slick'
+import Slick from 'react-slick'
 import classNames from 'classnames'
 import SliderButton from '../SliderButton/SliderButton'
 import './AboutSlider.scss'

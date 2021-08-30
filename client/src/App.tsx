@@ -25,10 +25,10 @@ function App(): JSX.Element {
         <nav className="header__nav">
           <ul>
             <li>
-              <a href="#1">О нас</a>
+              <a href="#1">Услуги</a>
             </li>
             <li>
-              <a href="#2">Услуги</a>
+              <a href="#2">О нас</a>
             </li>
             <li>
               <a href="#3">Партнеры</a>
@@ -57,9 +57,10 @@ function App(): JSX.Element {
                     Комплексная помощь <b>малому</b>
                   </span>
                   <span>
-                    <b>бизнесу</b> при взаимодействии
+                    <b>бизнесу</b>. Взаимодействие
                   </span>
-                  <span>с властными структурами</span>
+                  <span>с государственными системами</span>
+                  <small>(ЕГАИС, ФНС, Маркировки, Меркурия)</small>
                 </Title>
                 <div className="promo__bottom">
                   <Modal btnText="Нужна помощь">
@@ -82,19 +83,7 @@ function App(): JSX.Element {
             </div>
           </div>
         </section>
-        <section className="about" id="1">
-          <div className="wrapper">
-            <Title aura>
-              <span>Всё, что вам нужно </span>
-              <span>
-                знать о <b>нашей компании</b>
-              </span>
-              <span>в одном месте</span>
-            </Title>
-            <AboutSlider />
-          </div>
-        </section>
-        <section className="services" id="2">
+        <section className="services" id="1">
           <div className="wrapper">
             <Title aura>
               <span>Услуги, которые </span>
@@ -128,6 +117,18 @@ function App(): JSX.Element {
                 </Modal>
               </div>
             </div>
+          </div>
+        </section>
+        <section className="about" id="2">
+          <div className="wrapper">
+            <Title aura>
+              <span>Всё, что вам нужно </span>
+              <span>
+                знать о <b>нашей компании</b>
+              </span>
+              <span>в одном месте</span>
+            </Title>
+            <AboutSlider />
           </div>
         </section>
         <section className="partners" id="3">
@@ -170,10 +171,10 @@ function App(): JSX.Element {
               <nav className="footer__nav">
                 <ul>
                   <li>
-                    <a href="#1">О компании</a>
+                    <a href="#1">Наши услуги</a>
                   </li>
                   <li>
-                    <a href="#2">Наши услуги</a>
+                    <a href="#2">О компании</a>
                   </li>
                   <li>
                     <a href="#3">Партнеры</a>
