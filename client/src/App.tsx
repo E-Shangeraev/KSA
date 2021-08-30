@@ -203,7 +203,11 @@ function App(): JSX.Element {
               </span>
               <p className="footer__policy">
                 <span>Все права защищены.</span>
-                <a href="/" target="_blank">
+                <a
+                  // eslint-disable-next-line max-len
+                  href="/Политика-в-отношении-обработки-персональных-данных.pdf"
+                  target="_blank"
+                  rel="noreferrer">
                   Политика конфиденциальности
                 </a>
               </p>
@@ -211,7 +215,7 @@ function App(): JSX.Element {
             <div>
               <p className="footer__client">
                 <span>Клиентский отдел</span>
-                <a href="mailto:info@ksa.com">info@ksa.com</a>
+                <a href="mailto:ksa.vlg@yandex.ru">ksa.vlg@yandex.ru</a>
               </p>
               <p className="footer__career">
                 <span>Карьера в компании</span>
