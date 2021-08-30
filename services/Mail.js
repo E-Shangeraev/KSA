@@ -18,7 +18,7 @@ class Mail {
   createMailOption(data, subject) {
     const mailOption = {
       from: `<${process.env.MAIL_LOGIN}>`,
-      to: 'eldar@mygang.ru',
+      to: 'ksa.vlg@yandex.ru',
       subject: subject,
       html: data,
     }
