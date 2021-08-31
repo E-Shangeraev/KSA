@@ -131,7 +131,7 @@ function App(): JSX.Element {
             <AboutSlider />
           </div>
         </section>
-        <section className="partners" id="3">
+        {/* <section className="partners" id="3">
           <div className="wrapper">
             <Title aura>
               <span>
@@ -161,7 +161,7 @@ function App(): JSX.Element {
               </li>
             </ul>
           </div>
-        </section>
+        </section> */}
         <Feedback id="4" />
       </main>
       <footer className="footer">

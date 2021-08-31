@@ -62,34 +62,32 @@ const AboutSlider = () => {
       <div className="about-slider__bottom">
         <Slick className="second" ref={secondSliderRef} {...settings} fade>
           <p className="second__slide">
-            Компания существует <b>для помощи малому бизнесу</b>. Изначально
-            развивались как продавцы торгового оборудования. НО вышли на уровень
-            помощи и взаимодействия малого бизнеса и властных структур. Помощь
-            оказываем комплексную. Обычно без помощи никто не остается. за
-            несколько лет скопился богатый опыт и навыки.
+            Вы можете быть уверены, что ваша проблема будет решена оперативно.
+            Вопрос{' '}
+            <b>по&nbsp;маркировке, 1С, ЕГАИС или технической поддержке</b>,
+            просто оставьте заявку или позвоните по номеру, указанному на сайте.
           </p>
           <p className="second__slide">
-            <b>Lorem ipsum</b> dolor sit amet consectetur, adipisicing elit.
-            Tempora accusamus placeat magnam dolores hic? Laborum ad
-            exercitationem nemo error voluptates. Totam porro nobis labore illo?
-            Facere beatae quam omnis eligendi?
+            После сотрудничества вы не будете оставлены на произвол судьбы. Если
+            у вас возникают какие-то вопросы, вы всегда можете связаться с нами,
+            и мы <b>абсолютно бесплатно</b> проведем для вас консультацию.
           </p>
           <p className="second__slide">
-            <b>Lorem ipsum dolor</b>, sit amet consectetur adipisicing elit.
-            Ipsum nihil asperiores cumque, ex optio nisi suscipit illo culpa
-            consequatur beatae ipsa! Natus, rerum illo aut eum, eveniet itaque
-            autem quos explicabo enim dolore aliquid assumenda error voluptatem
-            iste qui sunt?
+            Наши клиенты отличаются друг от друга, размерами компании,
+            процессами внутри организации, сферой деятельности и многим другим.
+            Мы готовы подстраиваться под каждого клиента, чтобы вы были уверены,
+            что <b>ваша проблема будет решена комплексно</b>.
           </p>
           <p className="second__slide">
-            <b>Lorem</b> ipsum dolor, sit amet consectetur adipisicing elit.
-            Ipsum nihil asperiores cumque, ex optio nisi suscipit illo culpa
-            consequatur beatae ipsa! Natus, rerum?
+            Комплексный подход позволяет выявить ключевые проблемы, которые
+            препятствуют развитию вашего бизнеса. Обращаясь к нам, вы можете
+            быть уверены, что{' '}
+            <b>эти проблемы больше повторяться не&nbsp;будут</b>.
           </p>
           <p className="second__slide">
-            <b>Lorem ipsum dolor</b>, sit amet consectetur adipisicing elit.
-            Ipsum nihil asperiores cumque, ex optio nisi suscipit illo culpa
-            consequatur beatae ipsa!
+            По мнению наших клиентов, после сотрудничества с нами компания
+            начинает <b>развиваться значительно быстрее</b>, а проблем
+            становиться меньше. Оставьте заявку и убедитесь в этом сами.
           </p>
         </Slick>
         <div className="about-slider__buttons">
