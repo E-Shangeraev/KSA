@@ -196,9 +196,7 @@ function App(): JSX.Element {
             <div>
               <span className="footer__inn">ООО “КСА” ИНН 3455001204</span>
               <span className="footer__address">
-                Офис в г. Москва <br />
-                ул. Пушкина 31а, <br />
-                оф. 501,
+                г. Санкт-Петербург <br />
                 <a href="tel:+7 (904) 645-11-91">
                   <span>тел: </span>+7 (904) 645-11-91
                 </a>{' '}
