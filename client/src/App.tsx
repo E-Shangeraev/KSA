@@ -9,8 +9,8 @@ import logo from './assets/img/logo.svg'
 import icon1 from './assets/img/icons/1.svg'
 import icon2 from './assets/img/icons/2.svg'
 import icon3 from './assets/img/icons/3.svg'
-import partnerLogo1 from './assets/img/partner-logo-1.png'
-import partnerLogo2 from './assets/img/partner-logo-2.png'
+// import partnerLogo1 from './assets/img/partner-logo-1.png'
+// import partnerLogo2 from './assets/img/partner-logo-2.png'
 import footerLogo from './assets/img/footer-logo.svg'
 import vk from './assets/img/icons/vk.svg'
 import inst from './assets/img/icons/inst.svg'
@@ -28,10 +28,13 @@ function App(): JSX.Element {
               <a href="#1">Услуги</a>
             </li>
             <li>
-              <a href="#2">О нас</a>
+              <a href="#2">Сотрудничество</a>
             </li>
             <li>
-              <a href="#3">Партнеры</a>
+              <a href="#3">О нас</a>
+            </li>
+            <li>
+              <a href="#4">Задать вопрос</a>
             </li>
           </ul>
         </nav>
@@ -60,7 +63,7 @@ function App(): JSX.Element {
                     <b>бизнесу</b>. Взаимодействие
                   </span>
                   <span>с государственными системами</span>
-                  <small>(ЕГАИС, ФНС, Маркировки, Меркурия)</small>
+                  <small>(ЕГАИС, ФНС, Маркировка, Меркурия)</small>
                 </Title>
                 <div className="promo__bottom">
                   <Modal btnText="Нужна помощь">
@@ -91,7 +94,7 @@ function App(): JSX.Element {
               <span>компания</span>
             </Title>
             <ServicesList />
-            <div className="how-to">
+            <div className="how-to" id="2">
               <div className="how-to__container">
                 <h3 className="subtitle">Получить помощь легко</h3>
                 <ul className="how-to__steps">
@@ -119,7 +122,7 @@ function App(): JSX.Element {
             </div>
           </div>
         </section>
-        <section className="about" id="2">
+        <section className="about" id="3">
           <div className="wrapper">
             <Title aura>
               <span>Всё, что вам нужно </span>
@@ -174,10 +177,10 @@ function App(): JSX.Element {
                     <a href="#1">Наши услуги</a>
                   </li>
                   <li>
-                    <a href="#2">О компании</a>
+                    <a href="#2">Сотрудничество</a>
                   </li>
                   <li>
-                    <a href="#3">Партнеры</a>
+                    <a href="#3">О компании</a>
                   </li>
                   <li>
                     <a href="#4">Оставить заявку</a>

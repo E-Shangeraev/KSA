@@ -1,7 +1,8 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
   align-items: center;
+  grid-column-gap: 2%;
   width: 100%;
   height: 110px;
   padding: 0 12%;
@@ -17,19 +18,20 @@
     display: flex;
     width: 40%;
   }
-}
-.header__logo {
-  margin-right: 5%;
+  .button {
+    padding: 7% 5%;
+    white-space: nowrap;
+  }
 }
 .header__nav {
   flex-grow: 1;
   flex-shrink: 0;
-  max-width: 350px;
-  margin: 0 auto;
+  justify-self: center;
 
   ul {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 1em;
   }
   li {
     position: relative;
@@ -51,9 +53,6 @@
       transition: ease 0.35s;
     }
   }
-  li:not(:last-of-type) {
-    margin-right: 10%;
-  }
   li:hover::before {
     transform: translate(-50%, -50%) scale(1);
   }
@@ -62,7 +61,7 @@
   }
 }
 .header__phone {
-  margin: 0 5%;
+  text-align: center;
   font-size: 18px;
   transition: ease 0.25s;
 
@@ -72,24 +71,16 @@
 }
 
 @media (max-width: 1366px) {
+  .header {
+    grid-template-columns: max-content 1fr min-content;
+  }
   .header__nav {
     display: none;
-  }
-  .header__phone {
-    margin: 0 auto;
-  }
-  .header button {
-    margin-left: 5%;
   }
 }
 @media (max-width: 1200px) {
   .header {
     padding: 0 10%;
-  }
-}
-@media (max-width: 1024px) {
-  .header__phone {
-    font-size: 14px;
   }
 }
 @media (max-width: 900px) {
@@ -102,27 +93,16 @@
     height: 100px;
 
     .button {
-      padding: 0;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      font-size: 0;
-      background-image: url('../../assets/img/phone-icon.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 50%;
-      background-color: $green;
-    }
-    .button:hover,
-    .button:focus,
-    .button:active {
-      opacity: 1.2;
-      background-color: $green;
-      border-color: $green;
+      display: none;
     }
   }
   .header__logo {
     width: 180px;
+  }
+  .header__phone {
+    justify-self: center;
+    margin: 0;
+    margin-left: auto;
   }
 }
 
@@ -152,6 +132,11 @@
 }
 @media (max-width: 430px) {
   .header__phone {
-    display: none;
+    font-size: 14px;
+  }
+}
+@media (max-width: 360px) {
+  .header__phone {
+    font-size: 12px;
   }
 }
