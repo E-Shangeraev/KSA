@@ -63,7 +63,7 @@ function App(): JSX.Element {
                     <b>бизнесу</b>. Взаимодействие
                   </span>
                   <span>с государственными системами</span>
-                  <small>(ЕГАИС, ФНС, Маркировка, Меркурия)</small>
+                  <small>(ЕГАИС, ФНС, Маркировка, Меркурий)</small>
                 </Title>
                 <div className="promo__bottom">
                   <Modal btnText="Нужна помощь">
