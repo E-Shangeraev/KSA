@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 import { Formik, Form } from 'formik'
 import * as yup from 'yup'
 import { v4 as uuidv4 } from 'uuid'
+import ym from 'react-yandex-metrika'
 import Title from '../Title/Title'
 import Button from '../Button/Button'
 import Modal from '../Modal/Modal'
@@ -41,8 +42,14 @@ const Feedback: FC<{ id?: string }> = ({ id }) => {
           }}
           validateOnBlur
           validationSchema={validationSchema}
-          onSubmit={(values, { resetForm }) => {
+          onSubmit={async (values, { resetForm }) => {
             // console.log(JSON.stringify(values))
+            await fetch('/api/mail', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json;charset=utf-8' },
+              body: JSON.stringify(values),
+            })
+            ym('reachGoal', 'zayavka')
             resetForm()
             setSubmited(true)
           }}>

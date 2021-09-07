@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react'
 import { Formik, Field } from 'formik'
 import * as yup from 'yup'
 import { v4 as uuidv4 } from 'uuid'
+import ym from 'react-yandex-metrika'
 import Button from '../Button/Button'
 
 const phoneRegExp =
@@ -61,6 +62,7 @@ const ModalFeedback: FC<ModalFeedbackProps> = ({
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(values),
               })
+              ym('reachGoal', 'zayavka')
               resetForm()
               setSubmited(true)
             }}
