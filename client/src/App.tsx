@@ -46,125 +46,126 @@ function App(): JSX.Element {
       .catch(() => setContacts(null))
   }, [])
 
-  return (
-    <div className="App">
-      <header className="header">
-        <img className="header__logo" src={logo} alt="Логотип КСА" />
-        <nav className="header__nav">
-          <ul>
-            <li>
-              <a href="#1">Услуги</a>
-            </li>
-            <li>
-              <a href="#2">Сотрудничество</a>
-            </li>
-            <li>
-              <a href="#3">О нас</a>
-            </li>
-            <li>
-              <a href="#4">Задать вопрос</a>
-            </li>
-          </ul>
-        </nav>
-        {contacts && contacts.phone && (
-          <a className="header__phone" href={`tel:${contacts.phone}`}>
-            {contacts.phone}
-          </a>
-        )}
-        <Modal btnText="Получить консультацию" btnOutlined>
-          <ModalFeedback
-            title="КСА на связи"
-            text="Оставьте свои контактные данные
+  if (contacts) {
+    return (
+      <div className="App">
+        <header className="header">
+          <img className="header__logo" src={logo} alt="Логотип КСА" />
+          <nav className="header__nav">
+            <ul>
+              <li>
+                <a href="#1">Услуги</a>
+              </li>
+              <li>
+                <a href="#2">Сотрудничество</a>
+              </li>
+              <li>
+                <a href="#3">О нас</a>
+              </li>
+              <li>
+                <a href="#4">Задать вопрос</a>
+              </li>
+            </ul>
+          </nav>
+          {contacts.phone && (
+            <a className="header__phone" href={`tel:${contacts.phone}`}>
+              {contacts.phone}
+            </a>
+          )}
+          <Modal btnText="Получить консультацию" btnOutlined>
+            <ModalFeedback
+              title="КСА на связи"
+              text="Оставьте свои контактные данные
               и мы обязательно свяжемся с вами"
-          />
-        </Modal>
-      </header>
-      <main>
-        <h1 className="visually-hidden">Комплексные системы автоматизации</h1>
-        <section className="promo">
-          <div className="wrapper">
-            <div className="promo__container">
-              <div>
-                <Title>
-                  <span>
-                    Комплексная помощь <b>малому</b>
-                  </span>
-                  <span>
-                    <b>бизнесу</b>. Взаимодействие
-                  </span>
-                  <span>с государственными системами</span>
-                  <small>(ЕГАИС, ФНС, Маркировка, Меркурий)</small>
-                </Title>
-                <div className="promo__bottom">
-                  <Modal btnText="Нужна помощь">
+            />
+          </Modal>
+        </header>
+        <main>
+          <h1 className="visually-hidden">Комплексные системы автоматизации</h1>
+          <section className="promo">
+            <div className="wrapper">
+              <div className="promo__container">
+                <div>
+                  <Title>
+                    <span>
+                      Комплексная помощь <b>малому</b>
+                    </span>
+                    <span>
+                      <b>бизнесу</b>. Взаимодействие
+                    </span>
+                    <span>с государственными системами</span>
+                    <small>(ЕГАИС, ФНС, Маркировка, Меркурий)</small>
+                  </Title>
+                  <div className="promo__bottom">
+                    <Modal btnText="Нужна помощь">
+                      <ModalFeedback
+                        title="КСА на связи"
+                        text="Оставьте свои контактные данные
+                    и мы обязательно свяжемся с вами"
+                      />
+                    </Modal>
+                    <p>
+                      Богатый опыт и&nbsp;навыки
+                      <br />
+                      в&nbsp;сфере автоматизации бизнеса,
+                      <br />
+                      маркировки товаров, ЕГАИС
+                    </p>
+                  </div>
+                </div>
+                <div className="promo__picture" />
+              </div>
+            </div>
+          </section>
+          <section className="services" id="1">
+            <div className="wrapper">
+              <Title aura>
+                <span>Услуги, которые </span>
+                <span>предоставляет наша</span>
+                <span>компания</span>
+              </Title>
+              <ServicesList />
+              <div className="how-to" id="2">
+                <div className="how-to__container">
+                  <h3 className="subtitle">Получить помощь легко</h3>
+                  <ul className="how-to__steps">
+                    <li>
+                      <img src={icon1} alt="Поиск в интернете" />
+                      <p>Оставить заявку на нашем сайте, заполнив форму</p>
+                    </li>
+                    <li>
+                      <img src={icon2} alt="Менеджер, отвечающий на вопросы" />
+                      <p>Дождаться звонка менеджера и обсудить вашу проблему</p>
+                    </li>
+                    <li>
+                      <img src={icon3} alt="Договор о сотрудничестве" />
+                      <p>Заключить договор и начать сотрудничество</p>
+                    </li>
+                  </ul>
+                  <Modal btnText="Оставить заявку">
                     <ModalFeedback
                       title="КСА на связи"
                       text="Оставьте свои контактные данные
                     и мы обязательно свяжемся с вами"
                     />
                   </Modal>
-                  <p>
-                    Богатый опыт и&nbsp;навыки
-                    <br />
-                    в&nbsp;сфере автоматизации бизнеса,
-                    <br />
-                    маркировки товаров, ЕГАИС
-                  </p>
                 </div>
               </div>
-              <div className="promo__picture" />
             </div>
-          </div>
-        </section>
-        <section className="services" id="1">
-          <div className="wrapper">
-            <Title aura>
-              <span>Услуги, которые </span>
-              <span>предоставляет наша</span>
-              <span>компания</span>
-            </Title>
-            <ServicesList />
-            <div className="how-to" id="2">
-              <div className="how-to__container">
-                <h3 className="subtitle">Получить помощь легко</h3>
-                <ul className="how-to__steps">
-                  <li>
-                    <img src={icon1} alt="Поиск в интернете" />
-                    <p>Оставить заявку на нашем сайте, заполнив форму</p>
-                  </li>
-                  <li>
-                    <img src={icon2} alt="Менеджер, отвечающий на вопросы" />
-                    <p>Дождаться звонка менеджера и обсудить вашу проблему</p>
-                  </li>
-                  <li>
-                    <img src={icon3} alt="Договор о сотрудничестве" />
-                    <p>Заключить договор и начать сотрудничество</p>
-                  </li>
-                </ul>
-                <Modal btnText="Оставить заявку">
-                  <ModalFeedback
-                    title="КСА на связи"
-                    text="Оставьте свои контактные данные
-                    и мы обязательно свяжемся с вами"
-                  />
-                </Modal>
-              </div>
+          </section>
+          <section className="about" id="3">
+            <div className="wrapper">
+              <Title aura>
+                <span>Всё, что вам нужно </span>
+                <span>
+                  знать о <b>нашей компании</b>
+                </span>
+                <span>в одном месте</span>
+              </Title>
+              <AboutSlider />
             </div>
-          </div>
-        </section>
-        <section className="about" id="3">
-          <div className="wrapper">
-            <Title aura>
-              <span>Всё, что вам нужно </span>
-              <span>
-                знать о <b>нашей компании</b>
-              </span>
-              <span>в одном месте</span>
-            </Title>
-            <AboutSlider />
-          </div>
-        </section>
-        {/* <section className="partners" id="3">
+          </section>
+          {/* <section className="partners" id="3">
           <div className="wrapper">
             <Title aura>
               <span>
@@ -195,142 +196,144 @@ function App(): JSX.Element {
             </ul>
           </div>
         </section> */}
-        <Feedback id="4" />
-      </main>
-      <footer className="footer">
-        <div className="wrapper">
-          <div className="footer__container">
-            <div>
-              <nav className="footer__nav">
-                <ul>
-                  <li>
-                    <a href="#1">Наши услуги</a>
-                  </li>
-                  <li>
-                    <a href="#2">Сотрудничество</a>
-                  </li>
-                  <li>
-                    <a href="#3">О компании</a>
-                  </li>
-                  <li>
-                    <a href="#4">Оставить заявку</a>
-                  </li>
-                </ul>
-              </nav>
-              <img
-                className="footer__logo"
-                src={footerLogo}
-                alt="Логотип КСА"
-              />
-            </div>
-            <div>
-              {contacts && (
-                <>
-                  {contacts.inn && (
-                    <span className="footer__inn">{contacts.inn}</span>
-                  )}
-                  {contacts.address && (
-                    <span className="footer__address">
-                      {contacts.address} <br />
-                      <a href="tel:+7 (904) 645-11-91">
-                        {contacts.phone && (
-                          <>
-                            <span>тел: </span>
-                            {contacts.phone}
-                          </>
-                        )}
-                      </a>
-                      {contacts.workTime}
-                    </span>
-                  )}
-                </>
-              )}
-              <p className="footer__policy">
-                <span>Все права защищены.</span>
-                <a
-                  // eslint-disable-next-line max-len
-                  href="/Политика-в-отношении-обработки-персональных-данных.pdf"
-                  target="_blank"
-                  rel="noreferrer">
-                  Политика конфиденциальности
-                </a>
-              </p>
-            </div>
-            <div>
-              {contacts && contacts.mail && (
-                <p className="footer__client">
-                  <span>{contacts.mail.title}</span>
-                  <a href={`mailto:${contacts.mail.url}`}>
-                    {contacts.mail.url}
+          <Feedback id="4" />
+        </main>
+        <footer className="footer">
+          <div className="wrapper">
+            <div className="footer__container">
+              <div>
+                <nav className="footer__nav">
+                  <ul>
+                    <li>
+                      <a href="#1">Наши услуги</a>
+                    </li>
+                    <li>
+                      <a href="#2">Сотрудничество</a>
+                    </li>
+                    <li>
+                      <a href="#3">О компании</a>
+                    </li>
+                    <li>
+                      <a href="#4">Оставить заявку</a>
+                    </li>
+                  </ul>
+                </nav>
+                <img
+                  className="footer__logo"
+                  src={footerLogo}
+                  alt="Логотип КСА"
+                />
+              </div>
+              <div>
+                {contacts && (
+                  <>
+                    {contacts.inn && (
+                      <span className="footer__inn">{contacts.inn}</span>
+                    )}
+                    {contacts.address && (
+                      <span className="footer__address">
+                        {contacts.address} <br />
+                        <a href="tel:+7 (904) 645-11-91">
+                          {contacts.phone && (
+                            <>
+                              <span>тел: </span>
+                              {contacts.phone}
+                            </>
+                          )}
+                        </a>
+                        {contacts.workTime}
+                      </span>
+                    )}
+                  </>
+                )}
+                <p className="footer__policy">
+                  <span>Все права защищены.</span>
+                  <a
+                    // eslint-disable-next-line max-len
+                    href="/Политика-в-отношении-обработки-персональных-данных.pdf"
+                    target="_blank"
+                    rel="noreferrer">
+                    Политика конфиденциальности
                   </a>
                 </p>
-              )}
-              {contacts && contacts.socials && (
-                <ul className="footer__socials">
-                  {contacts.socials.vk && (
-                    <li>
-                      <a
-                        href={contacts.socials.vk}
-                        target="_blank"
-                        rel="noreferrer">
-                        <img src={vk} alt="ВКонтакте" />
-                      </a>
-                    </li>
-                  )}
-                  {contacts.socials.instagram && (
-                    <li>
-                      <a
-                        href={contacts.socials.instagram}
-                        target="_blank"
-                        rel="noreferrer">
-                        <img src={inst} alt="Instagram" />
-                      </a>
-                    </li>
-                  )}
-                  {contacts.socials.youTube && (
-                    <li>
-                      <a
-                        href={contacts.socials.youTube}
-                        target="_blank"
-                        rel="noreferrer">
-                        <img src={youtube} alt="YouTube" />
-                      </a>
-                    </li>
-                  )}
-                  {contacts.socials.whatsApp && (
-                    <li>
-                      <a
-                        href={contacts.socials.whatsApp}
-                        target="_blank"
-                        rel="noreferrer">
-                        <img src={whatsapp} alt="WhatsApp" />
-                      </a>
-                    </li>
-                  )}
-                  {contacts.socials.telegram && (
-                    <li>
-                      <a
-                        href={contacts.socials.telegram}
-                        target="_blank"
-                        rel="noreferrer">
-                        <img src={telegram} alt="Telegram" />
-                      </a>
-                    </li>
-                  )}
-                </ul>
-              )}
-              <p className="footer__made-by">
-                <span>©2021</span>
-                <a href="http://mygang.ru" target="_blank" rel="noreferrer">
-                  Made by Gang
-                </a>
-              </p>
+              </div>
+              <div>
+                {contacts && contacts.mail && (
+                  <p className="footer__client">
+                    <span>{contacts.mail.title}</span>
+                    <a href={`mailto:${contacts.mail.url}`}>
+                      {contacts.mail.url}
+                    </a>
+                  </p>
+                )}
+                {contacts && contacts.socials && (
+                  <ul className="footer__socials">
+                    {contacts.socials.vk && (
+                      <li>
+                        <a
+                          href={contacts.socials.vk}
+                          target="_blank"
+                          rel="noreferrer">
+                          <img src={vk} alt="ВКонтакте" />
+                        </a>
+                      </li>
+                    )}
+                    {contacts.socials.instagram && (
+                      <li>
+                        <a
+                          href={contacts.socials.instagram}
+                          target="_blank"
+                          rel="noreferrer">
+                          <img src={inst} alt="Instagram" />
+                        </a>
+                      </li>
+                    )}
+                    {contacts.socials.youTube && (
+                      <li>
+                        <a
+                          href={contacts.socials.youTube}
+                          target="_blank"
+                          rel="noreferrer">
+                          <img src={youtube} alt="YouTube" />
+                        </a>
+                      </li>
+                    )}
+                    {contacts.socials.whatsApp && (
+                      <li>
+                        <a
+                          href={contacts.socials.whatsApp}
+                          target="_blank"
+                          rel="noreferrer">
+                          <img src={whatsapp} alt="WhatsApp" />
+                        </a>
+                      </li>
+                    )}
+                    {contacts.socials.telegram && (
+                      <li>
+                        <a
+                          href={contacts.socials.telegram}
+                          target="_blank"
+                          rel="noreferrer">
+                          <img src={telegram} alt="Telegram" />
+                        </a>
+                      </li>
+                    )}
+                  </ul>
+                )}
+                <p className="footer__made-by">
+                  <span>©2021</span>
+                  <a href="http://mygang.ru" target="_blank" rel="noreferrer">
+                    Made by Gang
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
-    </div>
-  )
+        </footer>
+      </div>
+    )
+  }
+  return <div />
 }
 
 export default App
