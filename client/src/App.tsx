@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ym from 'react-yandex-metrika'
 import Title from './components/Title/Title'
 import AboutSlider from './components/AboutSlider/AboutSlider'
 import ServicesList from './components/ServicesList/ServicesList'
@@ -68,7 +69,10 @@ function App(): JSX.Element {
             </ul>
           </nav>
           {contacts.phone && (
-            <a className="header__phone" href={`tel:${contacts.phone}`}>
+            <a
+              className="header__phone"
+              href={`tel:${contacts.phone}`}
+              onClick={() => ym('reachGoal', 'zvonok')}>
               {contacts.phone}
             </a>
           )}
@@ -233,7 +237,9 @@ function App(): JSX.Element {
                     {contacts.address && (
                       <span className="footer__address">
                         {contacts.address} <br />
-                        <a href="tel:+7 (904) 645-11-91">
+                        <a
+                          href="tel:+7 (904) 645-11-91"
+                          onClick={() => ym('reachGoal', 'zvonok')}>
                           {contacts.phone && (
                             <>
                               <span>тел: </span>
