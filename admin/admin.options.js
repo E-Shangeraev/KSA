@@ -38,9 +38,10 @@ const options = {
             uploadedFile: 'Изображение',
           },
         },
-        Services: {
+        Service: {
           properties: {
-            uploadedFile: 'Изображение',
+            index: 'Порядковый номер',
+            uploadedFile: 'Иконка',
             title: 'Заголовок',
             text: 'Текст',
           },

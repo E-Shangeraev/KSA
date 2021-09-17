@@ -4,7 +4,7 @@ require('dotenv').config()
 class ServiceController {
   async getAll(req, res) {
     try {
-      let items = await ServiceModel.find()
+      let items = await ServiceModel.find().sort({ index: 1 })
       items = items.map(item => {
         const copy = Object.assign({}, item._doc)
         copy.image = process.env.AWSURI + item.uploadedFile.path
