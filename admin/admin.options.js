@@ -48,11 +48,12 @@ const options = {
         },
         Contacts: {
           properties: {
+            inn: 'ИНН',
             address: 'Адрес',
             phone: 'Номер телефона',
             mail: 'Почта для заявок',
-            clientMail: 'Клиентский отдел',
-            careerMail: 'Карьера в компании',
+            'mail.title': 'Заголовок в подвале',
+            'mail.url': 'Email',
             workTime: 'Рабочее время',
             socials: 'Ссылки на соцсети',
             'socials.vk': 'ВКонтакте',

@@ -9,11 +9,14 @@ const SocialSchema = new Schema({
 })
 
 const ContactsSchema = new Schema({
+  inn: String,
   address: String,
   phone: String,
-  mail: String,
-  clientMail: String,
   workTime: String,
+  mail: new Schema({
+    title: String,
+    url: String,
+  }),
   socials: SocialSchema,
 })
 

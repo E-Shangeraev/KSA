@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from './components/Title/Title'
 import AboutSlider from './components/AboutSlider/AboutSlider'
 import ServicesList from './components/ServicesList/ServicesList'
@@ -16,8 +16,36 @@ import vk from './assets/img/icons/vk.svg'
 import inst from './assets/img/icons/inst.svg'
 import youtube from './assets/img/icons/youtube.svg'
 import whatsapp from './assets/img/icons/whatsapp.svg'
+import telegram from './assets/img/icons/telegram.svg'
+
+interface IContacts {
+  address: string
+  inn: string
+  mail: {
+    title: string
+    url: string
+  }
+  socials: {
+    vk: string
+    instagram: string
+    youTube: string
+    whatsApp: string
+    telegram: string
+  }
+  phone: string
+  workTime: string
+}
 
 function App(): JSX.Element {
+  const [contacts, setContacts] = useState<IContacts | null>(null)
+
+  useEffect(() => {
+    fetch('/api/contacts')
+      .then(response => response.json())
+      .then(data => setContacts(data))
+      .catch(() => setContacts(null))
+  }, [])
+
   return (
     <div className="App">
       <header className="header">
@@ -38,9 +66,11 @@ function App(): JSX.Element {
             </li>
           </ul>
         </nav>
-        <a className="header__phone" href="tel:+7 (904) 645-11-91">
-          +7 (904) 645-11-91
-        </a>
+        {contacts && contacts.phone && (
+          <a className="header__phone" href={`tel:${contacts.phone}`}>
+            {contacts.phone}
+          </a>
+        )}
         <Modal btnText="Получить консультацию" btnOutlined>
           <ModalFeedback
             title="КСА на связи"
@@ -194,14 +224,27 @@ function App(): JSX.Element {
               />
             </div>
             <div>
-              <span className="footer__inn">ООО “КСА” ИНН 3455001204</span>
-              <span className="footer__address">
-                г. Санкт-Петербург <br />
-                <a href="tel:+7 (904) 645-11-91">
-                  <span>тел: </span>+7 (904) 645-11-91
-                </a>{' '}
-                пн-пт с 9:00 до 18:00
-              </span>
+              {contacts && (
+                <>
+                  {contacts.inn && (
+                    <span className="footer__inn">{contacts.inn}</span>
+                  )}
+                  {contacts.address && (
+                    <span className="footer__address">
+                      {contacts.address} <br />
+                      <a href="tel:+7 (904) 645-11-91">
+                        {contacts.phone && (
+                          <>
+                            <span>тел: </span>
+                            {contacts.phone}
+                          </>
+                        )}
+                      </a>
+                      {contacts.workTime}
+                    </span>
+                  )}
+                </>
+              )}
               <p className="footer__policy">
                 <span>Все права защищены.</span>
                 <a
@@ -214,43 +257,74 @@ function App(): JSX.Element {
               </p>
             </div>
             <div>
-              <p className="footer__client">
-                <span>Клиентский отдел</span>
-                <a href="mailto:ksa.vlg@yandex.ru">ksa.vlg@yandex.ru</a>
-              </p>
-              <p className="footer__career">
-                <span>Карьера в компании</span>
-                <a href="/" target="_blank">
-                  hr@ksa.com
+              {contacts && contacts.mail && (
+                <p className="footer__client">
+                  <span>{contacts.mail.title}</span>
+                  <a href={`mailto:${contacts.mail.url}`}>
+                    {contacts.mail.url}
+                  </a>
+                </p>
+              )}
+              {contacts && contacts.socials && (
+                <ul className="footer__socials">
+                  {contacts.socials.vk && (
+                    <li>
+                      <a
+                        href={contacts.socials.vk}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={vk} alt="ВКонтакте" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.instagram && (
+                    <li>
+                      <a
+                        href={contacts.socials.instagram}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={inst} alt="Instagram" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.youTube && (
+                    <li>
+                      <a
+                        href={contacts.socials.youTube}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={youtube} alt="YouTube" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.whatsApp && (
+                    <li>
+                      <a
+                        href={contacts.socials.whatsApp}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={whatsapp} alt="WhatsApp" />
+                      </a>
+                    </li>
+                  )}
+                  {contacts.socials.telegram && (
+                    <li>
+                      <a
+                        href={contacts.socials.telegram}
+                        target="_blank"
+                        rel="noreferrer">
+                        <img src={telegram} alt="Telegram" />
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              )}
+              <p className="footer__made-by">
+                <span>©2021</span>
+                <a href="http://mygang.ru" target="_blank" rel="noreferrer">
+                  Made by Gang
                 </a>
               </p>
-              <ul className="footer__socials">
-                <li>
-                  <a href="/" target="_blank">
-                    <img src={vk} alt="ВКонтакте" />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    // eslint-disable-next-line max-len
-                    href="https://vk.com/away.php?utf=1&to=https%3A%2F%2Finstagram.
-                    com%2Fit_park_sakhalin%3Futm_medium%3Dcopy_link"
-                    target="_blank"
-                    rel="noreferrer">
-                    <img src={inst} alt="Instagram" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" target="_blank">
-                    <img src={youtube} alt="YouTube" />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" target="_blank">
-                    <img src={whatsapp} alt="WhatsApp" />
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

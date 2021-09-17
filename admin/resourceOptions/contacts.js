@@ -3,22 +3,8 @@ const ContactsModel = require('../../models/Contacts')
 
 /** @type {AdminJS.ResourceOptions} */
 const options = {
-  listProperties: [
-    'address',
-    'phone',
-    'mail',
-    'workTime',
-    'clientMail',
-    'socials',
-  ],
-  editProperties: [
-    'address',
-    'phone',
-    'mail',
-    'workTime',
-    'clientMail',
-    'socials',
-  ],
+  listProperties: ['inn', 'address', 'phone', 'mail', 'workTime', 'socials'],
+  editProperties: ['inn', 'address', 'phone', 'mail', 'workTime', 'socials'],
   navigation: {
     icon: 'Information',
   },

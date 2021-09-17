@@ -1,5 +1,9 @@
 .footer {
   background-color: $dark-green;
+
+  a {
+    width: fit-content;
+  }
 }
 .footer__nav {
   margin-bottom: 85px;
@@ -70,7 +74,7 @@
     margin-bottom: 0;
   }
   .footer__client,
-  .footer__career {
+  .footer__made-by {
     margin-bottom: 25px;
   }
   .footer__socials {
