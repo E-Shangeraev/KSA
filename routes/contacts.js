@@ -2,6 +2,6 @@ const { Router } = require('express')
 const ContactsController = require('../controllers/Contacts')
 const router = Router()
 
-router.get('/', ContactsController.getItems)
+router.get('/', ContactsController.getAll)
 
 module.exports = router

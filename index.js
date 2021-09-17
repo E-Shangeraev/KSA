@@ -2,7 +2,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
-const { default: AdminBro } = require('admin-bro')
+const { default: AdminJS } = require('adminjs')
 const options = require('./admin/admin.options')
 require('dotenv').config()
 
@@ -12,12 +12,13 @@ const app = express()
 const {
   buildAdminRouter,
   mailRouter,
-  newsRouter,
+  aboutRouter,
+  servicesRouter,
   contactsController,
 } = require('./routes')
 
 // ==== Admin options ====
-const admin = new AdminBro(options)
+const admin = new AdminJS(options)
 const adminRouter = buildAdminRouter(admin)
 
 // ==== Middlewares ====
@@ -26,7 +27,8 @@ app.use(express.json({ extended: true }))
 // ==== API ====
 app.use(admin.options.rootPath, adminRouter)
 app.use('/api/mail', mailRouter)
-app.use('/api/news', newsRouter)
+app.use('/api/about', aboutRouter)
+app.use('/api/services', servicesRouter)
 app.use('/api/contacts', contactsController)
 
 // ==== App Start On Production ====

@@ -1,9 +1,11 @@
 const Admin = require('./admin')
-const News = require('./news')
+const About = require('./about')
+const Services = require('./services')
 const Contacts = require('./contacts')
 
 module.exports = {
   Admin,
-  News,
+  About,
+  Services,
   Contacts,
 }

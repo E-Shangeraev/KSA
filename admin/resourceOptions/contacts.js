@@ -1,15 +1,30 @@
-const AdminBro = require('admin-bro')
+const AdminJS = require('adminjs')
+const ContactsModel = require('../../models/Contacts')
 
-/** @type {AdminBro.ResourceOtions} */
+/** @type {AdminJS.ResourceOptions} */
 const options = {
-  listProperties: ['phone', 'mail'],
-  editProperties: ['phone', 'mail'],
+  listProperties: [
+    'address',
+    'phone',
+    'mail',
+    'workTime',
+    'clientMail',
+    'socials',
+  ],
+  editProperties: [
+    'address',
+    'phone',
+    'mail',
+    'workTime',
+    'clientMail',
+    'socials',
+  ],
   navigation: {
-    icon: 'Bullhorn',
-  },
-  properties: {
-    mimeType: { isVisible: true },
+    icon: 'Information',
   },
 }
 
-module.exports = options
+module.exports = {
+  options,
+  resource: ContactsModel,
+}

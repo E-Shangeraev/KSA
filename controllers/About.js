@@ -1,10 +1,10 @@
-const News = require('../models/News.js')
+const AboutModel = require('../models/About.js')
 require('dotenv').config()
 
-class NewsController {
-  async getItems(req, res) {
+class AboutController {
+  async getAll(req, res) {
     try {
-      let items = await News.find()
+      let items = await AboutModel.find().sort({ index: 1 })
       items = items.map(item => {
         const copy = Object.assign({}, item._doc)
         copy.image = process.env.AWSURI + item.uploadedFile.path
@@ -12,10 +12,10 @@ class NewsController {
       })
       res.status(200).json(items)
     } catch (err) {
-      res.status(400)
-      throw err
+      res.status(500)
+      throw new Error(err.message)
     }
   }
 }
 
-module.exports = new NewsController()
+module.exports = new AboutController()

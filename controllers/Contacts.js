@@ -1,13 +1,13 @@
 const Contacts = require('../models/Contacts.js')
 
 class ContactsController {
-  async getItems(req, res) {
+  async getAll(req, res) {
     try {
       const items = await Contacts.find()
       res.status(200).json(items)
     } catch (err) {
-      res.status(400)
-      throw err
+      res.status(500)
+      throw new Error(err.message)
     }
   }
 }

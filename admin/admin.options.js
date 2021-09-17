@@ -1,41 +1,11 @@
-const { default: AdminBro } = require('admin-bro')
-const AdminBroMongoose = require('@admin-bro/mongoose')
-const uploadFeature = require('@admin-bro/upload')
-require('dotenv').config()
+const { default: AdminJS } = require('adminjs')
+const AdminJSMongoose = require('@adminjs/mongoose')
 
-const { Admin } = require('./resourceOptions')
-const NewsOptions = require('./resourceOptions')
-const News = require('../models/News')
-const Contacts = require('../models/Contacts')
-const ContactsOptions = require('./resourceOptions')
+const { Admin, Services, Contacts, About } = require('./resourceOptions')
 
-const region = process.env.AWSRegion
-const bucket = process.env.AWSBucket
-const secretAccessKey = process.env.AWSSecretAccessKey
-const accessKeyId = process.env.AWSAccessKeyID
+AdminJS.registerAdapter(AdminJSMongoose)
 
-const features = [
-  uploadFeature({
-    provider: {
-      aws: { region, bucket, secretAccessKey, accessKeyId, expires: 0 },
-    },
-    properties: {
-      filename: 'uploadedFile.filename',
-      file: 'uploadedFile',
-      key: 'uploadedFile.path',
-      bucket: 'uploadedFile.folder',
-      size: 'uploadedFile.size',
-      mimeType: 'mimeType',
-    },
-    validation: {
-      mimeTypes: ['image/png', 'image/jpg', 'image/jpeg'],
-    },
-  }),
-]
-
-AdminBro.registerAdapter(AdminBroMongoose)
-
-/** @type {import('admin-bro').AdminBroOptions} */
+/** @type {import('adminjs').AdminJSOptions} */
 const options = {
   locale: {
     language: 'rus',
@@ -51,7 +21,8 @@ const options = {
       },
       labels: {
         Admin: 'Администраторы',
-        News: 'Новости',
+        About: 'О нас',
+        Service: 'Услуги',
         Contacts: 'Контактные данные',
       },
       buttons: {
@@ -59,30 +30,43 @@ const options = {
         save: 'Сохранить',
       },
       resources: {
-        News: {
+        About: {
+          properties: {
+            index: 'Порядковый номер',
+            title: 'Заголовок',
+            text: 'Текст',
+            uploadedFile: 'Изображение',
+          },
+        },
+        Services: {
           properties: {
             uploadedFile: 'Изображение',
             title: 'Заголовок',
             text: 'Текст',
-            date: 'Дата публикации',
           },
         },
         Contacts: {
           properties: {
+            address: 'Адрес',
             phone: 'Номер телефона',
-            mail: 'Почта',
+            mail: 'Почта для заявок',
+            clientMail: 'Клиентский отдел',
+            careerMail: 'Карьера в компании',
+            workTime: 'Рабочее время',
+            socials: 'Ссылки на соцсети',
+            'socials.vk': 'ВКонтакте',
+            'socials.instagram': 'Instagram',
+            'socials.youTube': 'YouTube',
+            'socials.whatsApp': 'WhatsApp',
+            'socials.telegram': 'Telegram',
           },
         },
       },
     },
   },
-  resources: [
-    Admin,
-    { resource: News, options: NewsOptions, features },
-    { resource: Contacts, options: ContactsOptions },
-  ],
+  resources: [Admin, About, Services, Contacts],
   branding: {
-    companyName: 'IT-парк',
+    companyName: 'KSA78',
     logo: '',
     softwareBrothers: false,
   },
